@@ -1,0 +1,235 @@
+1.Difference between HTTP1.1 vs HTTP2.
+
+HTTP is the short form of Hypertext Transfer Protocol. It is used by browsers in order to load the web pages.
+Example: Client browser sends HTTP request to web server once we enter URL such as "http://www.google.com". 
+Web browser sends HTTP response to the client with the contents of the webpage.
+
+HTTP 1.1 Protocol
+• It was released in 1997.
+• It uses text based commands for HTTP requests.
+• It added many performance enhancements e.g. caching, request pipelining, keepalive connections, transfer encoding, byte range requests etc.
+• It can load one requests at a time. Hence one request per one TCP connection is possible.
+
+HTTP 2 Protocol
+• It was released in Feb. 2015 by IETF.
+• It is binary and not textual.
+• It is fully multiplexed.
+• It interleaves multiple requests/responses in parallel without blocking on anyone.
+• It uses single TCP connection to deliver multiple requests/responses (in parallel).
+• It uses header compression in order to reduce overhead.
+• It allows servers to "push" responses into client caches proactively.
+• It removes unnecessary HTTP/1.x work-arounds e.g. Image sprites, domain sharing etc. • It is less error prone than HTTP/1.
+
+
+
+2. Objects and its internal representation in javascript:
+In javascript. Objects , data types such as numbers, strings, and booleans are distinct from primitive datatypes . Unlike Primitive data types which can only contain one value, objects can contain multiple values in the form of key-value pairs. 
+These keys can be either variables or functions and are referred to as properties and methods, respectively, within the object's context.
+Each and every object possesses a property that corresponds with a specific value. 
+
+The values can be retrieved by accessing the respective properties.
+
+var myCar = new Object();
+myCar.make = 'Suzuki';
+myCar.model = 'Altros';
+myCar.year = 1978;
+myCar.wheels = 2;
+
+Once the myCar object is created, its contents can be retrieved using keys.
+
+i.e.
+
+myCar.year
+
+Output: 1978
+
+It is also possible to access these values using the bracket notation.
+
+myCar[year]
+
+Output: 1978
+
+The syntax for Adding a property to an object is : ObjectName.ObjectProperty = propertyValue;
+The format for removing an object's property is as follows: delete ObjectName.ObjectProperty;
+
+One can use the following syntax to retrieve a property from an object:
+
+objectName.property        
+           //or
+objectName["property”]     
+           //or
+objectName[expression]  
+
+
+Object methods
+An object method is a function definition that is stored within an object property.
+
+It can be assumed that there will be a mechanical operation involved in initiating the car.
+
+function(){return ignition.on}
+The actions of stopping, braking, and turning headlights on and off are similar. Therefore, a straightforward definition of Java Script Object methods is that they are actions that can be carried out on objects.
+
+Create JavaScript Object with Object Literal
+To generate a JavaScript Object , a quick and effortless method is through Object Literal . All that is required is to enclose the attributes and corresponding values within curly brackets, as illustrated below.
+
+let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};
+
+Create JavaScript Object with Constructor
+A constructor, which is essentially a function, can be used with the new keyword to create instances of the same type, as demonstrated below.
+
+function Vehicle(name, maker) {
+   this.name = name;
+   this.maker = maker;
+}
+let car1 = new Vehicle(’Fiesta’, 'Ford’);
+let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)
+console.log(car1.name);    //Output: Fiesta
+console.log(car2.name);    //Output: Santa Fe
+
+
+Using the JavaScript Keyword new
+This instance generates a fresh javascript object that consists of four attributes.
+
+var person = new Object();
+person.firstName = “John”;
+person.lastName = “Doe”;
+person.age = 50;
+person.eyeColor = “blue”;
+
+
+
+Using the Object.create method
+The Object.create() method enables the creation of objects, providing the flexibility to select the prototype object for the new object, without the need to specify a constructor function.
+
+// Animal properties and method encapsulation
+var Animal = {
+  type: 'Invertebrates', // Default value of properties
+  displayType: function() {  // Method which will display type of Animal
+    console.log(this.type);
+  }
+};
+// Create new animal type called animal1 
+var animal1 = Object.create(Animal);
+animal1.displayType(); // Output:Invertebrates
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = 'Fishes';
+fish.displayType(); 
+// Output:Fishes
+
+
+3. IP address, port, HTTP methods, MAC address
+
+a. IP Address:
+An Internet Protocol (IP) address is a unique numerical identifier for every device or network that connects to the internet. Typically assigned by an internet service provider (ISP), an IP address is an online device address used for communicating across the internet.
+There are two versions of IP addresses that are commonly used on the internet: IPv4 and IPv6. An IPv4 address is expressed as a set of four dotted decimal numbers, where each octet is separated by a period, such as 192.168.35.4. 
+The three digits in the first octet represent a particular network on the internet while the rest of the digits represent the actual host address within the local network, such as a workstation or a server. An IPv6 address represents eight groups of four hexadecimal digits separated by colons, such as 2620:cc:8000:1c82:544c:cc2e:f2fa:5a9b. 
+Each internet protocol address can send information to other IP addresses through discrete chunks known as packets. Each network packet contains the data being transferred along with a header containing the metadata of the packet.
+
+Types of IP addresses
+list of the five most common types of IP addresses:
+1. Private IP addresses
+Each device connected to a home network or a private network carries a private IP address. Private IP addresses are non-internet facing and are only used on an internal network. Devices with private IP addresses might include computers, tablets, smartphones, Bluetooth devices, smart TVs and printers. With the increasing popularity of internet of things products, the use of private IP addressing is likely to keep growing.
+
+2. Public IP addresses
+An ISP assigns these addresses, which enable a router to communicate with the internet or an outside network. Public IP addresses cover the entire network, meaning multiple devices sharing the same internet connection will also share the same public IP address.
+
+3. Dynamic IP addresses
+These IP addresses are constantly changing and a new dynamic IP address is assigned to a device every time it connects to the internet. ISPs buy large pools of IP addresses to assign to their customers automatically. They revolve and reuse these addresses between different customers to generate cost savings and to provide easier network management. A dynamic IP address also offers security benefits, as it's harder for cybercriminals to hack into a network interface if its IP is constantly changing.
+
+4. Static IP addresses
+Unlike dynamic IP addresses, static IP addresses never change once they're assigned by the network. While most internet users and businesses don't require static IP addresses, they're a requirement for businesses that wish to host their own web servers. A static IP address ensures that all websites and email addresses associated with a certain web server will always have a consistent IP address so it can be reached on the internet.
+
+5. Website IP addresses
+These are IP addresses for website owners who don't host their websites on their own servers but rely on a hosting company to do so. Website IP addresses are composed of the following two types:
+
+Shared->This IP address is shared among many different websites and is mostly used by small businesses that use a managed hosting service, such as WordPress.
+Dedicated->This is a unique IP address assigned to an individual website. Dedicated IP addresses help website owners avoid getting blocked or blacklisted, something that owners of shared IP addresses might face when malicious behavior is exhibited by other websites sharing the same IP. Owners of dedicated IP addresses can access their websites while waiting for a domain transfer.
+
+
+b.HTTP methods:
+
+GET
+POST
+PUT
+HEAD
+DELETE
+PATCH
+OPTIONS
+CONNECT
+TRACE
+
+The two most common HTTP methods are: GET and POST.
+
+The GET Method
+GET is used to request data from a specified resource.
+
+Note that the query string (name/value pairs) is sent in the URL of a GET request:
+
+/test/demo_form.php?name1=value1&name2=value2
+Some notes on GET requests:
+
+GET requests can be cached
+GET requests remain in the browser history
+GET requests can be bookmarked
+GET requests should never be used when dealing with sensitive data
+GET requests have length restrictions
+GET requests are only used to request data (not modify)
+
+The PUT Method
+PUT is used to send data to a server to create/update a resource.
+The difference between POST and PUT is that PUT requests are idempotent. That is, calling the same PUT request multiple times will always produce the same result. In contrast, calling a POST request repeatedly have side effects of creating the same resource multiple times.
+
+The HEAD Method
+HEAD is almost identical to GET, but without the response body.
+In other words, if GET /users returns a list of users, then HEAD /users will make the same request but will not return the list of users.
+A HEAD request is useful for checking what a GET request will return before actually making a GET request - a HEAD request can read the Content-Length header to check the size of the file, without actually downloading the file.
+
+The DELETE Method
+The DELETE method deletes the specified resource.
+
+The PATCH Method
+The PATCH method is used to apply partial modifications to a resource.
+
+The OPTIONS Method
+The OPTIONS method describes the communication options for the target resource.
+
+The CONNECT Method
+The CONNECT method is used to start a two-way communications (a tunnel) with the requested resource.
+
+The TRACE Method
+The TRACE method is used to perform a message loop-back test that tests the path for the target resource (useful for debugging purposes).
+
+The POST Method
+POST is used to send data to a server to create/update a resource.
+
+The data sent to the server with POST is stored in the request body of the HTTP request:
+
+POST /test/demo_form.php HTTP/1.1
+Host: w3schools.com
+
+name1=value1&name2=value2
+Some notes on POST requests:
+
+POST requests are never cached
+POST requests do not remain in the browser history
+POST requests cannot be bookmarked
+POST requests have no restrictions on data length
+
+
+c. MAC address: 
+
+1.MAC address is the physical address, which uniquely identifies each device on a given network. To make communication between two networked devices, we need two addresses: IP address and MAC address. It is assigned to the NIC (Network Interface card) of each device that can be connected to the internet.
+2.It stands for Media Access Control, and also known as Physical address, hardware address, or BIA (Burned In Address).
+3.It is globally unique; it means two devices cannot have the same MAC address. It is represented in a hexadecimal format on each device, such as 00:0a:95:9d:67:16.
+4.It is 12-digit, and 48 bits long, out of which the first 24 bits are used for OUI(Organization Unique Identifier), and 24 bits are for NIC/vendor-specific.
+5.It works on the data link layer of the OSI model.
+6.It is provided by the device's vendor at the time of manufacturing and embedded in its NIC, which is ideally cannot be changed.
+7.The ARP protocol is used to associate a logical address with a physical or MAC address
+
+
+d. Ports:
+1.A port is a virtual point where network connections start and end. 
+2.Ports are software-based and managed by a computer's operating system. 
+3.Each port is associated with a specific process or service. 
+4.Ports allow computers to easily differentiate between different kinds of traffic: emails go to a different port than webpages, for instance, even though both reach a computer over the same Internet connection.
